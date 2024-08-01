@@ -37,6 +37,8 @@ do_cargo_setup_snapshot[vardepsexclude] += "UNINATIVE_LOADER"
 
 do_compile:prepend () {
 	export RUSTC_BOOTSTRAP="1"
+	RUST_MIN_STACK=16777216
+	export RUST_BACKTRACE=full
 }
 
 do_install () {
